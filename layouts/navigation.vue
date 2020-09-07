@@ -4,6 +4,7 @@
       fab
       icon
       fixed
+      elevation="4"
       :top="true"
       :left="true"
       @click.stop="drawer = !drawer"
@@ -20,7 +21,10 @@
           v-for="(item, index) in catalog"
           :key="index"
         >
-          <navigation-item :catalog-item="item" />
+          <navigation-item
+            :current-index="index"
+            :catalog-item="item"
+          />
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

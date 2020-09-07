@@ -4,18 +4,18 @@
     flat
     class="mx-auto mb-2"
     max-width="200"
-    :to="catalogItem.link"
+    :to="localePath(catalogItem.link)"
   >
     <v-img
       class="white--text align-end"
       height="150px"
       :src="catalogItem.src"
     >
-      <v-card-title>{{ catalogItem.title }}</v-card-title>
+      <v-card-title>{{ $t(`catalog[${currentIndex}].title`) }}</v-card-title>
     </v-img>
 
     <v-card-subtitle>
-      {{ catalogItem.day }}
+      {{ $t(`catalog[${currentIndex}].day`) }}
     </v-card-subtitle>
   </v-card>
 </template>
@@ -23,6 +23,10 @@
 <script>
 export default {
   props: {
+    currentIndex: {
+      type: Number,
+      required: true
+    },
     catalogItem: {
       type: Object,
       required: true

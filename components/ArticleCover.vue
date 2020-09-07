@@ -1,8 +1,8 @@
 <template>
   <section id="article-cover">
     <div class="article-title">
-      <h3>{{ day }}</h3>
-      <h1>{{ title }}</h1>
+      <h3>{{ $t(`catalog[${currentIndex}].day`) }}</h3>
+      <h1>{{ $t(`catalog[${currentIndex}].title`) }}</h1>
     </div>
     <v-img
       :src="src"
@@ -24,8 +24,6 @@ export default {
   data () {
     const cover = catalog[this.currentIndex]
     return {
-      day: cover.day,
-      title: cover.title,
       src: cover.src
     }
   }

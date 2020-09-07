@@ -1,9 +1,9 @@
 <template>
   <section id="article-footer">
     <div v-if="prev">
-      <nuxt-link :to="prev.link">
+      <nuxt-link :to="localePath(prev.link)">
         <div>
-          <h4>上一篇：</h4>
+          <h4>{{ $t('site.previous') }}</h4>
           <h3>{{ prev.day }}</h3>
           <h2>{{ prev.title }}</h2>
         </div>
@@ -11,11 +11,11 @@
       <v-img :src="prev.src" />
     </div>
     <div v-if="next">
-      <nuxt-link :to="next.link">
+      <nuxt-link :to="localePath(next.link)">
         <div class="next">
-          <h4>下一篇：</h4>
-          <h3>{{ next.day }}</h3>
-          <h2>{{ next.title }}</h2>
+          <h4>{{ $t('site.next') }}</h4>
+          <h3>{{ $t(`catalog[${currentIndex}].day`) }}</h3>
+          <h2>{{ $t(`catalog[${currentIndex}].title`) }}</h2>
         </div>
       </nuxt-link>
       <v-img :src="next.src" />

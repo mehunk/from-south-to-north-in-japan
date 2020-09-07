@@ -58,6 +58,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-i18n'
   ],
   /*
   ** vuetify module configuration
@@ -94,5 +95,33 @@ export default {
         component: resolve(__dirname, 'pages/south/first-day.vue')
       })
     }
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'zh-CN',
+        iso: 'zh-CN',
+        file: 'zh-CN.js',
+        image: 'china.png'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.js',
+        image: 'united-states.png'
+      },
+      {
+        code: 'ja',
+        iso: 'ja-JA',
+        file: 'ja.js',
+        image: 'japan.png'
+      }
+    ],
+    defaultLocale: 'zh-CN',
+    vueI18n: {
+      fallbackLocale: 'zh-CN'
+    },
+    langDir: 'locales/',
+    lazy: true
   }
 }
